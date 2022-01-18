@@ -1,7 +1,9 @@
 public class FareCalculator {
-    public float calculateByDistance(float kms) {
-        if (kms == 0)
+
+    public float calculateByDistance(Kilometers kms) {
+        if (kms.hasNoDistance())
             return 1;
-        return kms * 2;
+
+        return  (float) Math.ceil(kms.getDistance()*2);
     }
 }
