@@ -20,12 +20,6 @@ public class FareCalculatorTest {
         assertThat(Fare.buildByKms(0.5f).fare(), equalTo(new Euros(1f)));
     }
 
-
-    @Test
-    public void shouldBeFourEurosForTwoKms() {
-        assertThat(Fare.buildByKms(2).fare(), equalTo(new Euros(4f)));
-    }
-
     @Test
     public void shouldBeThreeEurosForOnePoint2Kms() {
         assertThat(Fare.buildByKms(1.2f).fare(), equalTo(new Euros(3f)));
