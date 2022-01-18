@@ -12,4 +12,8 @@ public class Kilometers {
     public float getDistance() {
         return distance;
     }
+
+    public static Kilometers noDistance() {
+        return new Kilometers(0);
+    }
 }

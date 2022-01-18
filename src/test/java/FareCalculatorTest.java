@@ -5,23 +5,21 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class FareCalculatorTest {
 
-    public static final float NO_DISTANCE = 0;
-    public static final float ONE_EURO = 1;
-    public static final float ONE_KM = 1;
-    public static final float TWO_EUROS = 2;
-    private static final float FOUR_EUROS = 4;
-    private static final float THREE_EUROS = 3;
+    public static final Euros ONE_EURO = new Euros(1f);
+    public static final Euros TWO_EUROS = new Euros(2f);
+    private static final Euros FOUR_EUROS = new Euros(4f);
+    private static final Euros THREE_EUROS = new Euros(3f);
 
     @Test
     public void shouldBeOneEuroForZeroKms(){
         FareCalculator fareCalculator = new FareCalculator();
-        assertThat(fareCalculator.calculateByDistance(new Kilometers(NO_DISTANCE)), equalTo(ONE_EURO));
+        assertThat(fareCalculator.calculateByDistance(Kilometers.noDistance()), equalTo(ONE_EURO));
     }
 
     @Test
     public void shouldBeTwoEurosForOneKm(){
         FareCalculator fareCalculator = new FareCalculator();
-        assertThat(fareCalculator.calculateByDistance(new Kilometers(ONE_KM)), equalTo(TWO_EUROS));
+        assertThat(fareCalculator.calculateByDistance(new Kilometers(1)), equalTo(TWO_EUROS));
     }
 
     @Test
@@ -34,7 +32,7 @@ public class FareCalculatorTest {
     @Test
     public void shouldBeFourEurosForTwoKms(){
         FareCalculator fareCalculator = new FareCalculator();
-        assertThat(fareCalculator.calculateByDistance(new Kilometers((float) 2)), equalTo(FOUR_EUROS));
+        assertThat(fareCalculator.calculateByDistance(new Kilometers( 2)), equalTo(FOUR_EUROS));
     }
 
     @Test
