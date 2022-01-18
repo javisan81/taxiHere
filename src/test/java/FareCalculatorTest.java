@@ -5,11 +5,11 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 public class FareCalculatorTest {
 
-    public static final int NO_DISTANCE = 0;
-    public static final int ONE_EURO = 1;
-    public static final int ONE_KM = 1;
-    public static final int TWO_EUROS = 2;
-    private static final int FOUR_EUROS = 4;
+    public static final float NO_DISTANCE = 0;
+    public static final float ONE_EURO = 1;
+    public static final float ONE_KM = 1;
+    public static final float TWO_EUROS = 2;
+    private static final float FOUR_EUROS = 4;
 
     @Test
     public void shouldBeOneEuroForZeroKms(){
